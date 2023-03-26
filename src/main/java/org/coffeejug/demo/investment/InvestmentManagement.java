@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
 import org.coffeejug.demo.fund.Fund.FundId;
 import org.coffeejug.demo.fund.FundManagement;
+import org.coffeejug.demo.fund.internal.FundRegistry;
 import org.coffeejug.demo.investment.Investment.InvestmentStatus;
 import org.coffeejug.demo.investment.internal.InvestmentTransactionsService;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ public class InvestmentManagement {
   private final InvestmentTransactionsService investmentTransactionsService;
   private final InvestmentRepository investmentRepository;
   private final FundManagement fundManagement;
+  private final FundRegistry fundRegistry;
 
   public void createAndApproveInvestment(FundId fundId, String investorName, BigDecimal amount) {
     var investment = new Investment();
