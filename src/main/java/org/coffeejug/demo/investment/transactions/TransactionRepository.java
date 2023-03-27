@@ -1,6 +1,6 @@
-package org.coffeejug.demo.investment.internal;
+package org.coffeejug.demo.investment.transactions;
 
-import org.coffeejug.demo.investment.internal.InvestmentTransaction.InvestmentTransactionId;
+import org.coffeejug.demo.investment.transactions.InvestmentTransaction.InvestmentTransactionId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

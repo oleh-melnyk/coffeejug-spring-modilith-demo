@@ -5,9 +5,9 @@ import java.time.LocalDateTime;
 import lombok.RequiredArgsConstructor;
 import org.coffeejug.demo.fund.Fund.FundId;
 import org.coffeejug.demo.fund.FundManagement;
-import org.coffeejug.demo.fund.internal.FundRegistry;
+import org.coffeejug.demo.fund.registry.FundRegistry;
 import org.coffeejug.demo.investment.Investment.InvestmentStatus;
-import org.coffeejug.demo.investment.internal.InvestmentTransactionsService;
+import org.coffeejug.demo.investment.transactions.InvestmentTransactionsService;
 import org.springframework.stereotype.Service;
 
 @Service

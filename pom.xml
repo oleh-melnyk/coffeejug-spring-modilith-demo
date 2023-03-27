@@ -27,6 +27,13 @@
         <type>pom</type>
       </dependency>
       <dependency>
+        <groupId>org.jmolecules</groupId>
+        <artifactId>jmolecules-bom</artifactId>
+        <version>2022.2.2</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>org.yaml</groupId>
         <artifactId>snakeyaml</artifactId>
         <version>2.0</version>
@@ -55,6 +62,17 @@
     <dependency>
       <groupId>org.springframework.experimental</groupId>
       <artifactId>spring-modulith-actuator</artifactId>
+    </dependency>
+
+    <!-- jMolecules -->
+    <dependency>
+      <groupId>org.jmolecules</groupId>
+      <artifactId>jmolecules-ddd</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jmolecules</groupId>
+      <artifactId>jmolecules-events</artifactId>
     </dependency>
 
     <!-- Persistence -->

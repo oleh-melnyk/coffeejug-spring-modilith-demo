@@ -1,4 +1,4 @@
-package org.coffeejug.demo.investment.internal;
+package org.coffeejug.demo.investment.transactions;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

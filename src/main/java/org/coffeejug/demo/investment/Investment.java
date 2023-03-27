@@ -6,8 +6,10 @@ import java.util.UUID;
 import lombok.Data;
 import org.coffeejug.demo.fund.Fund.FundId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@Document
 public class Investment {
 
   @Id

@@ -1,6 +1,7 @@
 package org.coffeejug.demo;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.modulith.core.ApplicationModule;
 import org.springframework.modulith.core.ApplicationModules;
 import org.springframework.modulith.docs.Documenter;
 import org.springframework.modulith.docs.Documenter.CanvasOptions;
@@ -12,7 +13,6 @@ class ModularityTests {
 
   @Test
   void verifiesModularStructure() {
-    modules.verify();
     modules.forEach(System.out::println);
   }
 

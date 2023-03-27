@@ -1,4 +1,4 @@
-package org.coffeejug.demo.fund.internal;
+package org.coffeejug.demo.fund.registry;
 
 import java.util.Map;
 import org.springframework.stereotype.Service;

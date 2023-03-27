@@ -1,11 +1,11 @@
-package org.coffeejug.demo.investment.internal;
+package org.coffeejug.demo.investment.transactions;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.coffeejug.demo.investment.Investment.InvestmentId;
-import org.coffeejug.demo.investment.internal.InvestmentTransaction.InvestmentTransactionId;
-import org.coffeejug.demo.investment.internal.InvestmentTransaction.TransactionType;
+import org.coffeejug.demo.investment.transactions.InvestmentTransaction.InvestmentTransactionId;
+import org.coffeejug.demo.investment.transactions.InvestmentTransaction.TransactionType;
 import org.springframework.stereotype.Service;
 
 @Service
