@@ -34,4 +34,9 @@ public class InvestmentManagement {
 
     fundManagement.increaseFundPortfolioCapital(investment.getSubscribedFund(), amount);
   }
+
+  public void dailyReportForInvestor() {
+    investmentRepository.findAll().forEach(System.out::println);
+    System.out.println("New day, new challenges! ");
+  }
 }
