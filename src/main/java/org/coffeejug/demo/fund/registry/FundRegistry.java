@@ -8,6 +8,6 @@ public class FundRegistry {
 
   public Map<String, Object> lookupFundInfo(String publicFundName) {
     System.out.println("Looking for info in public registry...");
-    return Map.of();
+    return Map.of("key", "value");
   }
 }
