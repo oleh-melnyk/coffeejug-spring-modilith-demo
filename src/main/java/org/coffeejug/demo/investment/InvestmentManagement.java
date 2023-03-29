@@ -9,6 +9,7 @@ import org.coffeejug.demo.fund.registry.FundRegistry;
 import org.coffeejug.demo.investment.Investment.InvestmentStatus;
 import org.coffeejug.demo.investment.transactions.InvestmentTransactionsService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -19,10 +20,11 @@ public class InvestmentManagement {
   private final FundManagement fundManagement;
   private final FundRegistry fundRegistry;
 
+  @Transactional
   public void createAndApproveInvestment(FundId fundId, String investorName, BigDecimal amount) {
     var investment = new Investment();
-    investment.setDate(LocalDateTime.now());
     investment.setAmount(amount);
+    investment.setDate(LocalDateTime.now());
     investment.setStatus(InvestmentStatus.APPROVED);
     investment.setSubscribedFund(fundId);
     investment.setInvestorName(investorName);
@@ -37,6 +39,6 @@ public class InvestmentManagement {
 
   public void dailyReportForInvestor() {
     investmentRepository.findAll().forEach(System.out::println);
-    System.out.println("New day, new challenges! ");
+    System.out.println("New day, new challenges!");
   }
 }

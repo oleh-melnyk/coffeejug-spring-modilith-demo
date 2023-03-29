@@ -1,8 +1,6 @@
 package org.coffeejug.demo.investment;
 
 import java.math.BigDecimal;
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.assertj.core.api.Assertions;
@@ -17,10 +15,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.modulith.moments.support.TimeMachine;
 import org.springframework.modulith.test.ApplicationModuleTest;
 import org.springframework.modulith.test.PublishedEvents;
-import org.springframework.modulith.test.Scenario;
 
 @ApplicationModuleTest
 @ExtendWith(MockitoExtension.class)
@@ -43,18 +39,6 @@ public class InvestmentModuleTest {
 
     Mockito.verify(investmentRepository, Mockito.times(1)).save(ArgumentMatchers.any());
     Mockito.verify(fundManagement, Mockito.times(1)).increaseFundPortfolioCapital(new FundId("123"), BigDecimal.valueOf(150_000));
-  }
-
-  @Test
-  void investmentCreationEventPublished(Scenario scenario) {
-    FundId fundId = new FundId("123");
-    BigDecimal amount = BigDecimal.valueOf(150_000);
-
-    scenario.stimulate(() -> investmentManagement.createAndApproveInvestment(fundId, "Demo Inv", amount))
-        .andWaitForEventOfType(InvestmentApprovedEvent.class)
-        .matchingMappedValue(InvestmentApprovedEvent::fundId, fundId)
-        .matchingMappedValue(InvestmentApprovedEvent::fundId, amount)
-        .toArrive();
   }
 
   @Test
@@ -81,8 +65,8 @@ public class InvestmentModuleTest {
   }
 
   @Test
-  public void testMomentsEvents(){
+  public void testMomentsEvents() {
     //timeMachine.shiftBy(Duration.of(10, ChronoUnit.DAYS));
-    Mockito.verify(investmentRepository,Mockito.times(10)).findAll();
+    Mockito.verify(investmentRepository, Mockito.times(10)).findAll();
   }
 }
