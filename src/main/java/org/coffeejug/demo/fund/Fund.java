@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import lombok.Data;
+import org.jmolecules.ddd.annotation.Identity;
+import org.jmolecules.ddd.types.Identifier;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -20,5 +22,5 @@ public class Fund {
   private BigDecimal minSubAmount;
   private List<LocalDate> closingDates = new ArrayList<>();
 
-  public record FundId(String value) {}
+  public record FundId(String value) implements Identifier{}
 }

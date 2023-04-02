@@ -1,4 +1,4 @@
-package org.coffeejug.demo.infra.event;
+package org.coffeejug.demo.investment;
 
 import java.math.BigDecimal;
 import org.coffeejug.demo.fund.Fund.FundId;
